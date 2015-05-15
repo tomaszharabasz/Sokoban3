@@ -1,0 +1,29 @@
+#wrapper {
+  margin-left: 10px;
+}
+#Sidebar {
+  
+  position: absolute;
+  float: right;
+  left:650px;
+  width: 300px;
+  background-color: #FFA;
+}
+#gameDiv {
+  position: absolute;
+  float: left;
+  width: 940px;
+  background-color: #CCF;
+}
+textarea#styled {
+  outline: none;
+  border: none; 
+  width: 300px;
+  height: 400px;
+  font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+  font-size: 24px; 
+  font-style: normal; 
+  font-variant: normal; 
+  font-weight: 500; 
+  line-height: 26.4px;
+}

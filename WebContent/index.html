@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+	<head>	<link rel="stylesheet" type="text/css" href="mystyle.css">
+    		<script src="phaser.min.js"></script>
+    		<script src="jquery-1.11.2.min.js"></script>
+    		<script src="src/boot.js"></script>
+		<script src="src/preload.js"></script>
+		<script src="src/gametitle.js"></script>
+		<script src="src/Level_1/Level1.js"></script>
+		<script src="src/Level_2/Level2.js"></script>
+		<script src="src/Level_3/Level3.js"></script>
+		<script src="src/Level_3/if.js"></script>
+		
+		<script src="src/Level_4/Level4.js"></script>
+		<script src="src/Level_4/if.js"></script>
+		
+		<script src="src/Level_5/Level5.js"></script>
+		<script src="src/Level_5/isVariable.js"></script>
+		
+		<script src="src/Level_6/Level6.js"></script>
+		
+		<script src="src/Level_7/Level7.js"></script>
+		<script src="src/Level_7/if.js"></script>
+		<script src="src/Level_7/isVariableLevel7.js"></script>
+		
+		<script src="src/validator.js"></script>
+    	    	
+    		<style>
+    			body{margin:0}
+    		</style>
+
+    </head>
+
+<body>
+<div id="wrapper">
+    <p> Press the spacebar to jump </p>
+    <div id="gameDiv"> 
+    </div>
+	
+	<div id="Sidebar" > 
+		<form>
+		<textarea id="styled" cols="30">Down 1*3</textarea>
+	 	
+	 	</form>
+	 </div>
+	 		<script>
+			(function() {
+				//By default we set
+				 BasicGame.screen = "small";
+				 BasicGame.srx = Math.max(window.innerWidth,window.innerHeight);
+				 BasicGame.sry = Math.min(window.innerWidth,window.innerHeight);
+				 
+				 BasicGame.logicWidth = 480;
+				 BasicGame.logicHeight = 320;
+				 var r = BasicGame.logicWidth/BasicGame.logicHeight;
+
+				 if(BasicGame.srx >= 360){
+				  BasicGame.screen = "small";
+				  BasicGame.gameWidth = 360;
+				 }
+				 if(BasicGame.srx >= 480){
+				  BasicGame.screen = "normal";
+				  BasicGame.gameWidth = 200;
+				 }
+				 if(BasicGame.srx >= 720){
+				  BasicGame.screen = "large";
+				  BasicGame.gameWidth = 300;
+				 }
+				 if(BasicGame.srx >= 960){
+				  BasicGame.screen = "xlarge";
+				  BasicGame.gameWidth = 960;
+				 }
+				 if(BasicGame.srx >= 1440){
+				  BasicGame.screen = "xxlarge";
+				  BasicGame.gameWidth = 1440;
+				 }
+				 
+				 //If on deskop, we may need to fix the maximum resolution instead of scaling the game to the full monitor resolution
+				/*  var device = new Phaser.Device();
+				 if(device.desktop){
+				  BasicGame.screen = "large";
+				  BasicGame.gameWidth = 720;
+				 }
+				 device = null;
+				 
+				 */ 
+				 console.log("asd" + BasicGame.srx + window.innerWidth + "  " +window.innerHeight)
+				 BasicGame.gameHeight = BasicGame.gameWidth/r;
+				 //We need these methods later to convert the logical game position to display position, So convertWidth(logicWidth) will be right edge for all screens
+				 BasicGame.convertWidth = function(value){
+				  return value/BasicGame.logicWidth * BasicGame.gameWidth; 
+				 };
+				 BasicGame.convertHeight = function(value){
+				  return value/BasicGame.logicHeight * BasicGame.gameHeight;
+				 };
+				 
+				
+				var game = new Phaser.Game(BasicGame.gameWidth,BasicGame.gameHeight,  Phaser.CANVAS, "gameDiv");
+				// Bootowanie
+				game.state.add("Boot",boot);
+				//Wczytanie Assetow
+				game.state.add("Preload",preload);
+				// Home screen
+				game.state.add("GameTitle",gameTitle);
+				// Level 1 - proste chodzenie + kolizje
+				game.state.add("Level1",Level1);
+				// Level 2 (Dzialajacy If true/false, kolizje, Dodawanie)
+				game.state.add("Level2",Level2);
+				// Gotowe, if (stars), wraz z blokami
+				game.state.add("Level3",Level3);
+				// Deklaracja zmiennych
+				game.state.add("Level4",Level4);
+				// Operacje matematyczne przy chodzeniu (+-*-)
+				//game.state.add("Adding",adding);
+				//Level 5 - przypisanie war = a + b
+				game.state.add("Level5",Level5);
+				game.state.add("Level6",Level6);
+				game.state.add("Level7",Level7);
+				
+				game.state.start("Boot");
+			})();    
+		</script>
+</div>
+  
+</body>  
+</html>  

@@ -1,0 +1,16 @@
+
+Up 1-1+1
+Down 2*1-1
+Right 2*2-1+1-3
+if (2<1) {
+Left 1
+if (false) {
+Up 1
+if (true) {
+Right 2
+}
+if (true) {
+Right 2
+}
+}
+}

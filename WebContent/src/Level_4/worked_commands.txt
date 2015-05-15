@@ -1,0 +1,18 @@
+if (true) {
+Down 1
+}
+Up 1
+if (true) {
+Right 1
+if (true) {
+Up 2
+if (false) {
+Right 2
+}
+Down 1  // wchodzi do sarch switch i nastepnie do check if
+if (true) {  // i to pozniej wypierdala
+Right 2
+}
+}
+}
+Down 1

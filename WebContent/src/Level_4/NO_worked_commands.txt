@@ -1,0 +1,70 @@
+if (true) {
+Down 1
+}
+Up 1
+if (true) {
+Right 1
+if (true) {
+Up 2
+if (false) {
+Right 2
+}
+if (true) {  // TO WCHODZI DO SERACH SWITCH I NIE WIE CO ZROBIC
+Right 2
+}
+}
+}
+Down 1
+
+
+// SOLVED
+// dodanie linijki check if score w serach switch
+    function _searchSwitch()  {
+    	
+    	_checkIfScore(arr,score);
+    	var move = String(arr[0].match(/(\D*)\s(\d*)/)[1]);
+    	window.alert(move)
+
+
+
+
+
+//
+Solved:
+Dodanie linjki w if.js:
+	 ifChecker(score,arr);
+	 window.alert("AAAA" + arr[0])
+		if (!reg.exec(arr[0])){
+			 ifChecker(score,arr); 
+		}
+AND Level4.js:
+
+validator(arr);
+			//for (var i=0;i<arr.length; i++) {
+				//if (ifStatement.exec(arr[i])) {
+					_checkIfScore(arr,score);
+					gwiazdkiIf = true;
+				//}
+			//}
+    	
+if (stars>-1) {
+Up 2
+}
+if (stars>1) {
+Right 1
+if (stars>1) {
+Up 2
+if (false) {
+Right 2
+}
+if (true) {
+Right 2
+}
+}
+}
+if (stars>0) {
+Left 1
+}
+if (stars==2) {
+Up 1
+}

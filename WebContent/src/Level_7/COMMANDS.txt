@@ -1,0 +1,29 @@
+// O TO CHODZI!!!!!!!!!!!
+
+Up 1*3
+war z = 2
+if (false) {
+war z = 1
+if (true) {
+war z = 3
+}
+}
+Down z
+
+Up 1*3
+war z = 2
+if (stars>0) {
+war z = 1
+Left 1  // jak nie ma tu nic, to jest if za if i przechodzi to do switcha
+if (stars>0) {
+war z = 3
+}
+}
+Down z
+
+SOLVED BY:
+// 	function _searchSwitch() {
+    	if (arr[0]!=undefined) {
+        	//_checkIfScoreLevel4(arr,score);
+    		_checkIfScore(arr,score);
+    	}
