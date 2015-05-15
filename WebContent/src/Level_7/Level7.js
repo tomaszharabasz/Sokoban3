@@ -20,7 +20,7 @@ var gwiazdkiIf = false;
 var arr = [];
 var arr_step;
 var score = 0;
-var reg = /(^\w*)\s(\d.*)/;
+//var reg = /(^\w*)\s(\d.*)/;
 var Level7 = function(game) {
 	
 /*	$.getScript("src/Level_7/isVariableLevel7.js", function(){

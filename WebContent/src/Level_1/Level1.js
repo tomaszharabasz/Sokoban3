@@ -14,6 +14,8 @@
 	var arr_step;
 	var score = 0;
   	var i = 0;
+//	var reg = /(^\w*)\s\-{0,1}(\d.*)/;   // XXX -12 XXX 12
+
 var Level1 = function (game){
 	this.actionOnClick = function() {		
 		if (!empty.alive) {
@@ -25,7 +27,7 @@ var Level1 = function (game){
 			var len2 = 0;
 			arr_tmp = [];
 			//var reg = /(\D*)\s(\d*)/; //"XXX 12"
-			var reg = /(^\w*)\s\-?(\d.*)/;   // XXX -12 XXX 12
+			var reg = /(^\w*)\s\-{0,1}(\d.*)/;   // XXX -12 XXX 12
 			//Usuwanie blednych elementow skladni
 			for (var i=0;i<len; i++) {
 				if (reg.exec(arr[i])){
@@ -61,9 +63,9 @@ var Level1 = function (game){
     }
 
     function _searchSwitch()  {
+    	var reg = /(^\w*)\s\-{0,1}(\d.*)/; 
     	//var move = String(arr[0].match(/(\D*)\s(\d*)/)[1]);
-		var match = reg.exec(arr[0]);
-		alert(arr[0] + match);
+    	var match = reg.exec(arr[0]);
 		var move = match[1];
 		if (/-/.test(arr[0])) {
 			switch (move) {
