@@ -62,6 +62,7 @@ var Level1 = function (game){
     	_searchSwitch.call(this);
     }
 
+    
     function _searchSwitch()  {
     	var reg = /(^\w*)\s\-{0,1}(\d.*)/; 
     	//var move = String(arr[0].match(/(\D*)\s(\d*)/)[1]);
