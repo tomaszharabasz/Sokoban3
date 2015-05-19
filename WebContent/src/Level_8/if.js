@@ -1,12 +1,15 @@
 // funkcja do gwiazdek
 function _checkIfScore(arr,score) {
-	alert("level7if")
+	alert("level8_check if score asd")
 	var reg = /(\D*)\s(\d.*)/;	
+	
 	this._checkIfScore1 = function(score,arr) {
 		alert (arr)
 		 ifChecker(score,arr); 	
 		 }
-	 this.ifChecker = function(score,arr) {
+	
+	this.ifChecker = function(score,arr) {
+			alert("ifChecker")		 
 		 var ifStatement = /^if\s\((.*)\)\s\{/;
 		  if (ifStatement.exec(arr[0])) {
 			  validator(arr);
@@ -62,64 +65,12 @@ function _checkIfScore(arr,score) {
 	 // Kurwa nie wiem czy to tu ma byc, ale bez tego arr wywala blad
 	 // jesli zaczynam ifem. W konsoli napierdala teraz divami
 	 // najwyzej do wyjebania
-	 ifChecker(score,arr);
 			if (!reg.exec(arr[0])){
 			 ifChecker(score,arr); 
-		}
-	 
+		}	 
 }
 
-/*function _checkIfScoreStarter(arr,score) {
-	var reg = /(\D*)\s(\d.*)/;	
-		 var ifStatement = /^if\s\((.*)\)\s\{/;
-		 for (var i=0; i < arr.length ; i++) {
-			 if (ifStatement.exec(arr[i])) {
-			   validator(arr);
-			   var klamraDlaZero = arrKlamrowe[i]['c'];
-			   var operator = (ifStatement.exec(arr[i])[1]);
-				alert ("klamraDlaZero " + klamraDlaZero + " operator " + operator);
-			 switch (true) {
-			 case /war/.test(operator):
-	    		 for (var k=klamraDlaZero; k>=i; k--) {
-			 			arr.splice(k,1); 
-			 		}
-				 break;
-		      case /false/.test(operator):
-		    	  	// false 
-		   	  		for (var k=klamraDlaZero; k>=i; k--) {
-		 			arr.splice(k,1); 
-		 			}
-		      	  break;
-			  case /stars/.test(operator):
-		    	  	var starsStatement = /^stars(.*)/;
-		      		var matcher = (operator.match(starsStatement)[1]);
-		      		// true	
-		      		if (!eval(score+""+matcher)) {
-		      			 for (var k=klamraDlaZero; k>=i; k--) {
-					 			arr.splice(k,1); 
-					 		}
-		      		window.alert("stars_false");	
-		      		} else {window.alert("stars_true");}
-		     default: 
-		    	// wchodzi wszystko oprocz stars!! stars obslugiwane wyrzej, i pozniej wraca. 
-		    	// wazne w momencie przypisania wartosci (jesli jest war x w stars == false)
-		    	// false
-		    	 if (/stars/.test(operator)) { 
-		    		 break;
-		    		 }
-		    	 if (!eval(operator)) {
-		    		 window.alert(operator + "=" + eval(operator))
-		    		 for (var k=klamraDlaZero; k>=i; k--) {
-				 			arr.splice(k,1); 
-				 		}
-		    	  }
-		      	break;
-		    	}
-		 	}
-		 }
-}*/
-//wywolywane z isVariableLevel7
-function _checkIfScoreZero(arr, klamroweMap, score) { 
+function _checkIfScoreZero8(arr, klamroweMap, score) { 
 	var ifStatement = /^if\s\((.*)\)\s\{/;
 		 var operator = (ifStatement.exec(arr)[1]);
 		 alert("kwak" + arr);

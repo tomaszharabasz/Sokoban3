@@ -2,7 +2,6 @@
 // undefined dla klamer na samym poczatku[0,1...]
 
 function validator(arr,validator_arr) {
-    			alert("lebn" + arguments.length);
 
     	 var container = { }; // main object
     	 arrKlamrowe = {};
